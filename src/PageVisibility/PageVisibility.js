@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 const getVisibilityStatus = visibilityState => ({
@@ -31,7 +31,7 @@ class PageVisibility extends Component {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return children({
       ...this.state,
     })

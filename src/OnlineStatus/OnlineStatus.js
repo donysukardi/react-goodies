@@ -1,10 +1,10 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class OnlineStatus extends Component {
   constructor(props, context) {
     super(props, context)
-    const {onLine} = global.navigator
+    const { onLine } = global.navigator
     this.state = {
       isOnline: onLine,
       isOffline: !onLine,
@@ -36,7 +36,7 @@ class OnlineStatus extends Component {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return children({
       ...this.state,
     })

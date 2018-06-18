@@ -1,2 +1,1 @@
-// this is really only here for editor integrations
-module.exports = require('kcd-scripts/prettier')
+module.exports = require('@donysukardi/reactlib-scripts/prettier')

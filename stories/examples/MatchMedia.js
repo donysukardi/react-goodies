@@ -1,5 +1,5 @@
 import React from 'react'
-import {MatchMedia} from '../../src/index'
+import { MatchMedia } from '../../src/index'
 
 const Page = () => (
   <MatchMedia

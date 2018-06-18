@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class ClickOutside extends Component {
@@ -15,7 +15,7 @@ class ClickOutside extends Component {
     if (e.type === 'click' && this.isTouch) {
       return
     }
-    const {onClickOutside} = this.props
+    const { onClickOutside } = this.props
     const el = this.container
     if (!el.contains(e.target)) {
       onClickOutside(e)
@@ -39,7 +39,7 @@ class ClickOutside extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const {disabled} = this.props
+    const { disabled } = this.props
     /* istanbul ignore else  */
     if (prevProps.disabled !== disabled) {
       if (disabled) {
@@ -55,9 +55,9 @@ class ClickOutside extends Component {
   }
 
   render() {
-    const {setRef, props} = this
-    const {children} = props
-    return children({setRef})
+    const { setRef, props } = this
+    const { children } = props
+    return children({ setRef })
   }
 }
 

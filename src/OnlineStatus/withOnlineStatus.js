@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import getDisplayName from 'react-display-name'
 import OnlineStatus from './OnlineStatus'
 

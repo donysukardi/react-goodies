@@ -1,5 +1,5 @@
 import React from 'react'
-import {ClickOutside} from '../../src/index'
+import { ClickOutside } from '../../src/index'
 
 class Page extends React.Component {
   state = {
@@ -13,7 +13,7 @@ class Page extends React.Component {
   }
 
   handleClickOutside = e => {
-    const {onClickOutside} = this.props
+    const { onClickOutside } = this.props
     onClickOutside && onClickOutside()
     this.setState(state => ({
       active: false,
@@ -21,10 +21,10 @@ class Page extends React.Component {
   }
 
   render() {
-    const {active} = this.state
+    const { active } = this.state
     return (
       <ClickOutside disabled={!active} onClickOutside={this.handleClickOutside}>
-        {({setRef}) => (
+        {({ setRef }) => (
           <div ref={setRef}>
             <button type="button" onClick={this.handleClick}>
               Toggle

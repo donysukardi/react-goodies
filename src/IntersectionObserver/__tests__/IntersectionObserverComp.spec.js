@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {render} from 'react-testing-library'
+import { render } from 'react-testing-library'
 import IntersectionObserverComp from '../IntersectionObserverComp'
-import {propsToDataAttrs} from '../../testUtils'
+import { propsToDataAttrs } from '../../testUtils'
 
-const Target = ({setRef, children, ...props}) => {
+const Target = ({ setRef, children, ...props }) => {
   setRef('ref')
   return (
     <div data-testid="targetContainer" {...propsToDataAttrs(props)}>
@@ -69,7 +69,7 @@ describe('withIntersectionObserverProps', () => {
         disconnect: mockUnobserve,
       }))
 
-      const {unmount} = render(
+      const { unmount } = render(
         <IntersectionObserverComp
           thresholds={{
             foo: 0.5,
@@ -114,7 +114,7 @@ describe('withIntersectionObserverProps', () => {
         }
       })
 
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <IntersectionObserverComp
           thresholds={{
             foo: 0.5,
@@ -126,13 +126,13 @@ describe('withIntersectionObserverProps', () => {
       )
       expect(getByTestId('targetContainer')).toMatchSnapshot()
 
-      observerCallback([{isIntersecting: false, intersectionRatio: 0.5}])
+      observerCallback([{ isIntersecting: false, intersectionRatio: 0.5 }])
       expect(getByTestId('targetContainer')).toMatchSnapshot()
 
-      observerCallback([{isIntersecting: true, intersectionRatio: 0.5}])
+      observerCallback([{ isIntersecting: true, intersectionRatio: 0.5 }])
       expect(getByTestId('targetContainer')).toMatchSnapshot()
 
-      observerCallback([{isIntersecting: true, intersectionRatio: 1}])
+      observerCallback([{ isIntersecting: true, intersectionRatio: 1 }])
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })
   })

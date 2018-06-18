@@ -4,4 +4,4 @@ const propsToDataAttrs = props =>
     return acc
   }, {})
 
-export {propsToDataAttrs}
+export { propsToDataAttrs }

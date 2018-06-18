@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react'
-import {render} from 'react-testing-library'
-import {propsToDataAttrs} from '../../testUtils'
+import { render } from 'react-testing-library'
+import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
   <div data-testid="targetContainer" {...propsToDataAttrs(props)} />
@@ -35,7 +35,7 @@ describe('PageVisibility', () => {
     })
 
     it('should set initial state', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <PageVisibility>{renderTarget}</PageVisibility>,
       )
 
@@ -43,7 +43,7 @@ describe('PageVisibility', () => {
     })
 
     it('should handle page visibility state change', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <PageVisibility>{renderTarget}</PageVisibility>,
       )
 
@@ -58,7 +58,9 @@ describe('PageVisibility', () => {
 
     it('should remove event listener on unrender', () => {
       const mockVisibility = jest.fn(() => 'hidden')
-      const {unmount} = render(<PageVisibility>{renderTarget}</PageVisibility>)
+      const { unmount } = render(
+        <PageVisibility>{renderTarget}</PageVisibility>,
+      )
 
       unmount()
 

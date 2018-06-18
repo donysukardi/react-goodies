@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {render} from 'react-testing-library'
-import {propsToDataAttrs} from '../../testUtils'
+import { render } from 'react-testing-library'
+import { propsToDataAttrs } from '../../testUtils'
 
-const Target = ({setRef, children, ...props}) => {
+const Target = ({ setRef, children, ...props }) => {
   setRef && setRef('ref')
   return (
     <div data-testid="targetContainer" {...propsToDataAttrs(props)}>
@@ -58,7 +58,7 @@ describe('withIntersectionObserver', () => {
     })
 
     it('should register observer with DOM node from `setRef` with a custom handler name', () => {
-      const CustomTarget = ({onMyRef}) => {
+      const CustomTarget = ({ onMyRef }) => {
         onMyRef('my-ref')
 
         return null
@@ -99,7 +99,7 @@ describe('withIntersectionObserver', () => {
       }))
 
       const EnhancedTarget = withIntersectionObserver({
-        options: {foo: 'bar'},
+        options: { foo: 'bar' },
       })(Target)
 
       render(<EnhancedTarget />)
@@ -122,7 +122,7 @@ describe('withIntersectionObserver', () => {
         process.env.NODE_ENV = 'test'
 
         const EnhancedTarget = withIntersectionObserver({
-          thresholds: {test: 0},
+          thresholds: { test: 0 },
         })(Target)
         render(<EnhancedTarget />)
         expect(EnhancedTarget.displayName).toMatchSnapshot()
@@ -132,7 +132,7 @@ describe('withIntersectionObserver', () => {
         process.env.NODE_ENV = 'production'
 
         const EnhancedTarget = withIntersectionObserver({
-          thresholds: {test: 0},
+          thresholds: { test: 0 },
         })(Target)
         render(<EnhancedTarget />)
         expect(EnhancedTarget.displayName).toMatchSnapshot()
@@ -152,7 +152,7 @@ describe('withIntersectionObserver', () => {
 
     it('should just pass Target component through', () => {
       const EnhancedTarget = withIntersectionObserver()(Target)
-      const {getByTestId} = render(<EnhancedTarget a={1} b={2} c={3} />)
+      const { getByTestId } = render(<EnhancedTarget a={1} b={2} c={3} />)
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })

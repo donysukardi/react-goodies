@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react'
-import {render} from 'react-testing-library'
-import {propsToDataAttrs} from '../../testUtils'
+import { render } from 'react-testing-library'
+import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
   <div data-testid="targetContainer" {...propsToDataAttrs(props)} />
@@ -41,7 +41,7 @@ describe('withMatchMedia', () => {
 
     it('should just pass props through', () => {
       const EnhancedTarget = withMatchMedia()(Target)
-      const {getByTestId} = render(<EnhancedTarget a={1} b={2} c={3} />)
+      const { getByTestId } = render(<EnhancedTarget a={1} b={2} c={3} />)
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })
@@ -74,7 +74,7 @@ describe('withMatchMedia', () => {
   describe('`window.matchMedia` is not supported', () => {
     it('should just pass Target component through', () => {
       const EnhancedTarget = withMatchMedia()(Target)
-      const {getByTestId} = render(<EnhancedTarget a={1} b={2} c={3} />)
+      const { getByTestId } = render(<EnhancedTarget a={1} b={2} c={3} />)
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })

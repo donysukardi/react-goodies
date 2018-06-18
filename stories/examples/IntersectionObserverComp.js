@@ -1,5 +1,5 @@
 import React from 'react'
-import {IntersectionObserverComp} from '../../src/index'
+import { IntersectionObserverComp } from '../../src/index'
 
 const Target = () => (
   <IntersectionObserverComp
@@ -9,14 +9,14 @@ const Target = () => (
       isFullVisible: 1.0,
     }}
   >
-    {({isOnePixelVisible, isHalfVisible, isFullVisible, setRef}) => (
+    {({ isOnePixelVisible, isHalfVisible, isFullVisible, setRef }) => (
       <div
         ref={setRef}
-        style={{backgroundColor: 'RebeccaPurple', color: 'white'}}
+        style={{ backgroundColor: 'RebeccaPurple', color: 'white' }}
       >
-        <p>{JSON.stringify({isOnePixelVisible})}</p>
-        <p>{JSON.stringify({isHalfVisible})}</p>
-        <p>{JSON.stringify({isFullVisible})}</p>
+        <p>{JSON.stringify({ isOnePixelVisible })}</p>
+        <p>{JSON.stringify({ isHalfVisible })}</p>
+        <p>{JSON.stringify({ isFullVisible })}</p>
       </div>
     )}
   </IntersectionObserverComp>
@@ -31,9 +31,9 @@ const Page = () => (
       border: '1px solid black',
     }}
   >
-    <div style={{height: '300px'}}>Scroll me down</div>
+    <div style={{ height: '300px' }}>Scroll me down</div>
     <Target />
-    <div style={{height: '300px'}} />
+    <div style={{ height: '300px' }} />
   </div>
 )
 

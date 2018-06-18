@@ -1,8 +1,8 @@
 /* eslint-disable global-require */
 import React from 'react'
-import {render} from 'react-testing-library'
+import { render } from 'react-testing-library'
 
-import {propsToDataAttrs} from '../../testUtils'
+import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
   <div data-testid="targetContainer" {...propsToDataAttrs(props)} />
@@ -48,7 +48,7 @@ describe('withPageVisibility', () => {
 
     it('should set initial state', () => {
       const EnhancedTarget = withPageVisibility(fullMapStatusToProps)(Target)
-      const {getByTestId} = render(<EnhancedTarget />)
+      const { getByTestId } = render(<EnhancedTarget />)
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })
@@ -108,7 +108,7 @@ describe('withPageVisibility', () => {
 
     it('should just pass Target component through', () => {
       const EnhancedTarget = withPageVisibility(dummyMapStatusToProps)(Target)
-      const {getByTestId} = render(<EnhancedTarget a={1} b={2} c={3} />)
+      const { getByTestId } = render(<EnhancedTarget a={1} b={2} c={3} />)
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })

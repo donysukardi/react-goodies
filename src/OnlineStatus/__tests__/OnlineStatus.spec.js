@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react'
-import {render} from 'react-testing-library'
-import {propsToDataAttrs} from '../../testUtils'
+import { render } from 'react-testing-library'
+import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
   <div data-testid="targetContainer" {...propsToDataAttrs(props)} />
@@ -36,13 +36,17 @@ describe('OnlineStatus', () => {
     })
 
     it('should set initial state', () => {
-      const {getByTestId} = render(<OnlineStatus>{renderTarget}</OnlineStatus>)
+      const { getByTestId } = render(
+        <OnlineStatus>{renderTarget}</OnlineStatus>,
+      )
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })
 
     it('should handle online status change', () => {
-      const {getByTestId} = render(<OnlineStatus>{renderTarget}</OnlineStatus>)
+      const { getByTestId } = render(
+        <OnlineStatus>{renderTarget}</OnlineStatus>,
+      )
 
       global.dispatchEvent(new CustomEvent('offline'))
       expect(getByTestId('targetContainer')).toMatchSnapshot()
@@ -53,7 +57,7 @@ describe('OnlineStatus', () => {
     it('should remove event listener on unrender', () => {
       const spy = jest.spyOn(global, 'removeEventListener')
 
-      const {unmount} = render(<OnlineStatus>{renderTarget}</OnlineStatus>)
+      const { unmount } = render(<OnlineStatus>{renderTarget}</OnlineStatus>)
       unmount()
 
       global.document.dispatchEvent(new CustomEvent('offline'))

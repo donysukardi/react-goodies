@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react'
-import {render} from 'react-testing-library'
-import {propsToDataAttrs} from '../../testUtils'
+import { render } from 'react-testing-library'
+import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
   <div data-testid="targetContainer" {...propsToDataAttrs(props)} />
@@ -70,7 +70,7 @@ describe('MatchMedia', () => {
         matches: true,
       }))
 
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <MatchMedia
           query={{
             test: {
@@ -94,7 +94,7 @@ describe('MatchMedia', () => {
         removeListener: mockRemoveListener,
       }))
 
-      const {unmount} = render(
+      const { unmount } = render(
         <MatchMedia
           query={{
             test: {
@@ -123,7 +123,7 @@ describe('MatchMedia', () => {
         matches: false,
       }))
 
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <MatchMedia
           query={{
             test: {
@@ -135,7 +135,7 @@ describe('MatchMedia', () => {
         </MatchMedia>,
       )
 
-      mockAddListener.mock.calls[0][0]({matches: true})
+      mockAddListener.mock.calls[0][0]({ matches: true })
 
       expect(getByTestId('targetContainer')).toMatchSnapshot()
     })

@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class IntersectionObserverComp extends Component {
@@ -9,7 +9,7 @@ class IntersectionObserverComp extends Component {
   }
 
   onObserve = entries => {
-    const {thresholds} = this.props
+    const { thresholds } = this.props
     this.setState(
       Object.keys(thresholds).reduce(
         (totalResult, prop) => ({
@@ -30,7 +30,7 @@ class IntersectionObserverComp extends Component {
   }
 
   componentDidMount() {
-    const {thresholds, options} = this.props
+    const { thresholds, options } = this.props
     this.observer = new global.IntersectionObserver(this.onObserve, {
       ...options,
       threshold: Object.keys(thresholds).map(prop => thresholds[prop]),
@@ -43,7 +43,7 @@ class IntersectionObserverComp extends Component {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return children({
       setRef: this.setRef,
       ...this.state,

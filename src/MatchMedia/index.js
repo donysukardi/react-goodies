@@ -1,2 +1,2 @@
-export {default as MatchMedia} from './MatchMedia'
-export {default as withMatchMedia} from './withMatchMedia'
+export { default as MatchMedia } from './MatchMedia'
+export { default as withMatchMedia } from './withMatchMedia'

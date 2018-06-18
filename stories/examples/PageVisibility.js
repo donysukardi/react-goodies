@@ -1,7 +1,7 @@
 import React from 'react'
-import {PageVisibility} from '../../src/index'
+import { PageVisibility } from '../../src/index'
 
-const Page = ({onHidden, onVisible}) => (
+const Page = ({ onHidden, onVisible }) => (
   <PageVisibility>
     {props => (
       <div>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import getDisplayName from 'react-display-name'
 import IntersectionObserverComp from './IntersectionObserverComp'
 
@@ -26,7 +26,7 @@ const withIntersectionObserver = ({
     render() {
       return (
         <IntersectionObserverComp thresholds={thresholds} options={options}>
-          {({setRef, ...rest}) => {
+          {({ setRef, ...rest }) => {
             const refProps = {
               [refKey]: this.setRef.bind(this, setRef),
             }

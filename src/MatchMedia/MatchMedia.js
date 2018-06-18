@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 import json2mq from 'json2mq'
 
@@ -20,7 +20,7 @@ class MatchMedia extends Component {
   constructor(props, context) {
     super(props, context)
 
-    const {query} = props
+    const { query } = props
 
     this.propsMatchers = Object.keys(query).map(prop => ({
       prop,
@@ -51,7 +51,7 @@ class MatchMedia extends Component {
   }
 
   render() {
-    const {children} = this.props
+    const { children } = this.props
     return children({
       ...this.state,
     })
