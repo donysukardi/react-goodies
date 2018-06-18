@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withIntersectionObserver Intersection Observer API is not supported should just pass Target component through 1`] = `
+<div
+  data-a="1"
+  data-b="2"
+  data-c="3"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported display name should not wrap display name in production env 1`] = `undefined`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported display name should wrap display name in non-production env 1`] = `"withIntersectionObserverProps(Target)"`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported should call external \`setRef\` if it has been passed in 1`] = `
+Array [
+  Array [
+    "ref",
+  ],
+]
+`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported should pass Intersection Observer options 1`] = `
+Array [
+  Array [
+    [Function],
+    Object {
+      "foo": "bar",
+      "threshold": Array [],
+    },
+  ],
+]
+`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported should register observer with DOM node from \`setRef\` 1`] = `
+Array [
+  Array [
+    [Function],
+    Object {
+      "threshold": Array [],
+    },
+  ],
+]
+`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported should register observer with DOM node from \`setRef\` 2`] = `
+Array [
+  Array [
+    "ref",
+  ],
+]
+`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported should register observer with DOM node from \`setRef\` with a custom handler name 1`] = `
+Array [
+  Array [
+    [Function],
+    Object {
+      "threshold": Array [],
+    },
+  ],
+]
+`;
+
+exports[`withIntersectionObserver Intersection Observer API is supported should register observer with DOM node from \`setRef\` with a custom handler name 2`] = `
+Array [
+  Array [
+    "my-ref",
+  ],
+]
+`;

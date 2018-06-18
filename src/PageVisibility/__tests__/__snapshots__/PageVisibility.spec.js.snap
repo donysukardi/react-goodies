@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageVisibility Page Visibility API is supported should handle page visibility state change 1`] = `
+<div
+  data-ishidden="true"
+  data-isprerendered="false"
+  data-isunloaded="false"
+  data-isvisible="false"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`PageVisibility Page Visibility API is supported should remove event listener on unrender 1`] = `
+Array [
+  Array [],
+  Array [],
+]
+`;
+
+exports[`PageVisibility Page Visibility API is supported should set initial state 1`] = `
+<div
+  data-ishidden="false"
+  data-isprerendered="false"
+  data-isunloaded="false"
+  data-isvisible="true"
+  data-testid="targetContainer"
+/>
+`;

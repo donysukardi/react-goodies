@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withMatchMedia \`window.matchMedia\` is not supported should just pass Target component through 1`] = `
+<div
+  data-a="1"
+  data-b="2"
+  data-c="3"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withMatchMedia \`window.matchMedia\` is supported display name should not wrap display name in production env 1`] = `undefined`;
+
+exports[`withMatchMedia \`window.matchMedia\` is supported display name should wrap display name in non-production env 1`] = `"withMatchMedia(Target)"`;
+
+exports[`withMatchMedia \`window.matchMedia\` is supported should just pass props through 1`] = `
+<div
+  data-a="1"
+  data-b="2"
+  data-c="3"
+  data-testid="targetContainer"
+/>
+`;

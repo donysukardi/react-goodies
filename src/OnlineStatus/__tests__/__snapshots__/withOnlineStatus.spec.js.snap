@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withOnlineStatus Online Status API is not supported should just pass Target component through 1`] = `
+<div
+  data-a="1"
+  data-b="2"
+  data-c="3"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withOnlineStatus Online Status API is supported display name should not wrap display name in production env 1`] = `undefined`;
+
+exports[`withOnlineStatus Online Status API is supported display name should wrap display name in non-production env 1`] = `"withOnlineStatus(Target)"`;

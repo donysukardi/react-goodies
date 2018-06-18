@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnlineStatus Online Status API is supported should handle online status change 1`] = `
+<div
+  data-isoffline="true"
+  data-isonline="false"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`OnlineStatus Online Status API is supported should handle online status change 2`] = `
+<div
+  data-isoffline="false"
+  data-isonline="true"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`OnlineStatus Online Status API is supported should remove event listener on unrender 1`] = `
+Array [
+  Array [
+    "error",
+    [Function],
+  ],
+  Array [
+    "error",
+    [Function],
+  ],
+  Array [
+    "error",
+    [Function],
+  ],
+  Array [
+    "error",
+    [Function],
+  ],
+  Array [
+    "online",
+    [Function],
+  ],
+  Array [
+    "offline",
+    [Function],
+  ],
+  Array [
+    "error",
+    [Function],
+  ],
+  Array [
+    "error",
+    [Function],
+  ],
+  Array [
+    "error",
+    [Function],
+  ],
+]
+`;
+
+exports[`OnlineStatus Online Status API is supported should set initial state 1`] = `
+<div
+  data-isoffline="false"
+  data-isonline="true"
+  data-testid="targetContainer"
+/>
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should map observer state to boolean props 1`] = `
+<div
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should map observer state to boolean props 2`] = `
+<div
+  data-bar="false"
+  data-foo="false"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should map observer state to boolean props 3`] = `
+<div
+  data-bar="false"
+  data-foo="true"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should map observer state to boolean props 4`] = `
+<div
+  data-bar="true"
+  data-foo="true"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should pass Intersection Observer options 1`] = `
+Array [
+  Array [
+    [Function],
+    Object {
+      "foo": "bar",
+      "threshold": Array [],
+    },
+  ],
+]
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should register observer with DOM node from \`setRef\` 1`] = `
+Array [
+  Array [
+    [Function],
+    Object {
+      "threshold": Array [
+        0.5,
+        1,
+      ],
+    },
+  ],
+]
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should register observer with DOM node from \`setRef\` 2`] = `
+Array [
+  Array [
+    "ref",
+  ],
+]
+`;
+
+exports[`withIntersectionObserverProps Intersection Observer API is supported should unregister observer with DOM node on unmount 1`] = `
+Array [
+  Array [],
+]
+`;

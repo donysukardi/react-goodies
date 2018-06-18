@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MatchMedia \`window.matchMedia\` is supported should change state and provide props when query has been matched 1`] = `
+<div
+  data-test="true"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`MatchMedia \`window.matchMedia\` is supported should pass query object to json2mq 1`] = `
+Array [
+  Array [
+    Object {
+      "maxWidth": 300,
+    },
+  ],
+]
+`;
+
+exports[`MatchMedia \`window.matchMedia\` is supported should set initial state and provide props with matched queries 1`] = `
+<div
+  data-test="true"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`MatchMedia \`window.matchMedia\` is supported should subscribe on render and unsubscribe on unrender 1`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;
+
+exports[`MatchMedia \`window.matchMedia\` is supported should subscribe on render and unsubscribe on unrender 2`] = `
+Array [
+  Array [
+    [Function],
+  ],
+]
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withPageVisibility Page Visibility API is not supported should just pass Target component through 1`] = `
+<div
+  data-a="1"
+  data-b="2"
+  data-c="3"
+  data-testid="targetContainer"
+/>
+`;
+
+exports[`withPageVisibility Page Visibility API is supported display name should not wrap display name in production env 1`] = `undefined`;
+
+exports[`withPageVisibility Page Visibility API is supported display name should wrap display name in non-production env 1`] = `"withPageVisibility(Target)"`;
+
+exports[`withPageVisibility Page Visibility API is supported should set initial state 1`] = `
+<div
+  data-ishidden="false"
+  data-isprerendered="false"
+  data-isunloaded="false"
+  data-isvisible="true"
+  data-testid="targetContainer"
+/>
+`;
