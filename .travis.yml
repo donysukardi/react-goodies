@@ -6,9 +6,10 @@ cache:
   yarn: true
   directories:
     - ~/.npm
-    - node_modules
+    - ~/.cache
 notifications:
   email: false
+before_script: yarn --cwd stories install
 script: yarn validate
 after_success: kcd-scripts travis-after-success
 branches:
