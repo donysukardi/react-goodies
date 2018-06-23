@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { render } from 'react-testing-library'
+import { cleanup, render } from 'react-testing-library'
 import IntersectionObserverComp from '../IntersectionObserverComp'
 import { propsToDataAttrs } from '../../testUtils'
 
@@ -33,6 +33,8 @@ describe('withIntersectionObserverProps', () => {
         disconnect: () => {},
       }))
     })
+
+    afterEach(cleanup)
 
     afterAll(() => {
       global.IntersectionObserver = origIntersectionObserver

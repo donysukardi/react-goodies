@@ -1,5 +1,5 @@
 import React from 'react'
-import { cleanup, fireEvent, renderIntoDocument } from 'react-testing-library'
+import { cleanup, fireEvent, render } from 'react-testing-library'
 import 'jest-dom/extend-expect'
 
 import ClickOutside from '../ClickOutside'
@@ -26,9 +26,7 @@ const ClickOutsideExample = props => (
 describe('ClickOutside', () => {
   it('calls onClickOutside when an element outside gets clicked', () => {
     const spy = jest.fn()
-    const { getByTestId } = renderIntoDocument(
-      <ClickOutsideExample onClickOutside={spy} />,
-    )
+    const { getByTestId } = render(<ClickOutsideExample onClickOutside={spy} />)
     fireEvent(
       getByTestId('outsideButton'),
       new MouseEvent('click', {
@@ -50,9 +48,7 @@ describe('ClickOutside', () => {
 
   it("doesn't call onClickOutside when an element inside gets clicked", () => {
     const spy = jest.fn()
-    const { getByTestId } = renderIntoDocument(
-      <ClickOutsideExample onClickOutside={spy} />,
-    )
+    const { getByTestId } = render(<ClickOutsideExample onClickOutside={spy} />)
     fireEvent(
       getByTestId('insideButton'),
       new MouseEvent('click', {
@@ -74,9 +70,7 @@ describe('ClickOutside', () => {
 
   it('calls onClickOutside when an element outside gets touched', () => {
     const spy = jest.fn()
-    const { getByTestId } = renderIntoDocument(
-      <ClickOutsideExample onClickOutside={spy} />,
-    )
+    const { getByTestId } = render(<ClickOutsideExample onClickOutside={spy} />)
     fireEvent(
       getByTestId('outsideButton'),
       new MouseEvent('touchend', {
@@ -112,7 +106,7 @@ describe('ClickOutside', () => {
 
   it("[disabled] doesn't call onClickOutside when an element outside gets clicked", () => {
     const spy = jest.fn()
-    const { getByTestId } = renderIntoDocument(
+    const { getByTestId } = render(
       <ClickOutsideExample disabled onClickOutside={spy} />,
     )
     fireEvent(
@@ -136,7 +130,7 @@ describe('ClickOutside', () => {
 
   it('removes event handler when switches to disabled', () => {
     const spy = jest.fn()
-    const { getByTestId, rerender } = renderIntoDocument(
+    const { getByTestId, rerender } = render(
       <ClickOutsideExample onClickOutside={spy} />,
     )
     fireEvent(
@@ -163,7 +157,7 @@ describe('ClickOutside', () => {
 
   it('adds event handler when switches from disabled', () => {
     const spy = jest.fn()
-    const { getByTestId, rerender } = renderIntoDocument(
+    const { getByTestId, rerender } = render(
       <ClickOutsideExample disabled onClickOutside={spy} />,
     )
     fireEvent(

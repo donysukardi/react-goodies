@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { noop, unwrapArray } from '../utils'
 
 const getVisibilityStatus = visibilityState => ({
   isVisible: visibilityState === 'visible',
@@ -31,7 +32,7 @@ class PageVisibility extends Component {
   }
 
   render() {
-    const { children } = this.props
+    const children = unwrapArray(this.props.children, noop)
     return children({
       ...this.state,
     })

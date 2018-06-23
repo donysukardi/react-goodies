@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React from 'react'
-import { render } from 'react-testing-library'
+import { cleanup, render } from 'react-testing-library'
 
 import { propsToDataAttrs } from '../../testUtils'
 
@@ -25,6 +25,8 @@ describe('withPageVisibility', () => {
   describe('Page Visibility API is supported', () => {
     let withPageVisibility = null
     let origVisibilityState = null
+
+    afterEach(cleanup)
 
     beforeAll(() => {
       origVisibilityState = global.document.visibilityState
@@ -85,6 +87,8 @@ describe('withPageVisibility', () => {
   describe('Page Visibility API is not supported', () => {
     let withPageVisibility = null
     let origVisibilityState = null
+
+    afterEach(cleanup)
 
     beforeAll(() => {
       origVisibilityState = global.document.visibilityState

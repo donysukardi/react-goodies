@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { noop, unwrapArray } from '../utils'
 
 class ClickOutside extends Component {
   isTouch = false
@@ -55,13 +56,13 @@ class ClickOutside extends Component {
   }
 
   render() {
-    const { setRef, props } = this
-    const { children } = props
-    return children({ setRef })
+    const children = unwrapArray(this.props.children, noop)
+    return children({ setRef: this.setRef })
   }
 }
 
 ClickOutside.propTypes = {
+  children: PropTypes.func,
   disabled: PropTypes.bool,
   onClickOutside: PropTypes.func.isRequired,
 }

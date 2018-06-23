@@ -10,12 +10,7 @@ exports[`PageVisibility Page Visibility API is supported should handle page visi
 />
 `;
 
-exports[`PageVisibility Page Visibility API is supported should remove event listener on unrender 1`] = `
-Array [
-  Array [],
-  Array [],
-]
-`;
+exports[`PageVisibility Page Visibility API is supported should remove event listener on unrender 1`] = `Array []`;
 
 exports[`PageVisibility Page Visibility API is supported should set initial state 1`] = `
 <div

@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { noop, unwrapArray } from '../utils'
 
 class OnlineStatus extends Component {
   constructor(props, context) {
@@ -36,7 +37,7 @@ class OnlineStatus extends Component {
   }
 
   render() {
-    const { children } = this.props
+    const children = unwrapArray(this.props.children, noop)
     return children({
       ...this.state,
     })

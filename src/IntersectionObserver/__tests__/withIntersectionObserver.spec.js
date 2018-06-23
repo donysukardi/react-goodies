@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { render } from 'react-testing-library'
+import { cleanup, render } from 'react-testing-library'
 import { propsToDataAttrs } from '../../testUtils'
 
 const Target = ({ setRef, children, ...props }) => {
@@ -37,6 +37,8 @@ describe('withIntersectionObserver', () => {
       // eslint-disable-next-line
       withIntersectionObserver = require('../withIntersectionObserver').default
     })
+
+    afterEach(cleanup)
 
     afterAll(() => {
       global.IntersectionObserver = origIntersectionObserver
@@ -118,6 +120,8 @@ describe('withIntersectionObserver', () => {
         process.env.NODE_ENV = origNodeEnv
       })
 
+      afterEach(cleanup)
+
       it('should wrap display name in non-production env', () => {
         process.env.NODE_ENV = 'test'
 
@@ -149,6 +153,8 @@ describe('withIntersectionObserver', () => {
       // eslint-disable-next-line
       withIntersectionObserver = require('../withIntersectionObserver').default
     })
+
+    afterEach(cleanup)
 
     it('should just pass Target component through', () => {
       const EnhancedTarget = withIntersectionObserver()(Target)

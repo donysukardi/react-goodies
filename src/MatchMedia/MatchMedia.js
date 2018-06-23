@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 import json2mq from 'json2mq'
+import { noop, unwrapArray } from '../utils'
 
 const queryToMql = query => global.matchMedia(json2mq(query))
 const createMediaMatcher = query => {
@@ -51,7 +52,7 @@ class MatchMedia extends Component {
   }
 
   render() {
-    const { children } = this.props
+    const children = unwrapArray(this.props.children, noop)
     return children({
       ...this.state,
     })

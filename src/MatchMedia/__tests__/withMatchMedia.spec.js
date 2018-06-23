@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React from 'react'
-import { render } from 'react-testing-library'
+import { cleanup, render } from 'react-testing-library'
 import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
@@ -10,6 +10,8 @@ const Target = props => (
 describe('withMatchMedia', () => {
   let mockJson2mq = null
   let withMatchMedia = null
+
+  afterEach(cleanup)
 
   beforeEach(() => {
     mockJson2mq = jest.fn()
@@ -72,6 +74,8 @@ describe('withMatchMedia', () => {
   })
 
   describe('`window.matchMedia` is not supported', () => {
+    afterEach(cleanup)
+
     it('should just pass Target component through', () => {
       const EnhancedTarget = withMatchMedia()(Target)
       const { getByTestId } = render(<EnhancedTarget a={1} b={2} c={3} />)

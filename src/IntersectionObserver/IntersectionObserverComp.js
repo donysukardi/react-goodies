@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { noop, unwrapArray } from '../utils'
 
 class IntersectionObserverComp extends Component {
   state = {}
@@ -39,11 +40,11 @@ class IntersectionObserverComp extends Component {
   }
 
   componentWillUnmount() {
-    this.observer.disconnect()
+    if (this.observer && this.observer.disconnect) this.observer.disconnect()
   }
 
   render() {
-    const { children } = this.props
+    const children = unwrapArray(this.props.children, noop)
     return children({
       setRef: this.setRef,
       ...this.state,

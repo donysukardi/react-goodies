@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React from 'react'
-import { render } from 'react-testing-library'
+import { cleanup, render } from 'react-testing-library'
 import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
@@ -12,6 +12,8 @@ const renderTarget = props => <Target {...props} />
 describe('MatchMedia', () => {
   let mockJson2mq = null
   let MatchMedia = null
+
+  afterEach(cleanup)
 
   beforeEach(() => {
     mockJson2mq = jest.fn()

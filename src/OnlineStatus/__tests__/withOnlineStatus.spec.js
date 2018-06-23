@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React from 'react'
-import { render } from 'react-testing-library'
+import { cleanup, render } from 'react-testing-library'
 import { propsToDataAttrs } from '../../testUtils'
 
 const Target = props => (
@@ -8,10 +8,14 @@ const Target = props => (
 )
 const dummyMapStatusToProps = () => {}
 
+afterEach(cleanup)
+
 describe('withOnlineStatus', () => {
   describe('Online Status API is supported', () => {
     let origOnlineStatus = null
     let withOnlineStatus = null
+
+    afterEach(cleanup)
 
     beforeAll(() => {
       origOnlineStatus = global.navigator.onLine
